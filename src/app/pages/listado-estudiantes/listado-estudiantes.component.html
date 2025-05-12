@@ -1,0 +1,14 @@
+<!-- listado-estudiantes.component.html -->
+
+<h2>Registrar Estudiante</h2>
+<input type="text" placeholder="Nombre" [(ngModel)]="nuevoEstudiante.nombre">
+<input type="email" placeholder="Correo" [(ngModel)]="nuevoEstudiante.correo">
+<button (click)="guardarEstudiante()">Guardar</button>
+
+<h2>Listado Estudiantes</h2>
+<button (click)="listarEstudiantes()">Listar</button>
+<ul>
+  <li *ngFor="let est of estudiantes">
+    {{ est.nombre }} - {{ est.correo }}
+  </li>
+</ul>
