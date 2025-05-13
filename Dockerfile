@@ -9,3 +9,10 @@ RUN npm run build --configuration=production
 FROM httpd:2.4
 COPY --from=build /app/dist/practica-s/browser /usr/local/apache2/htdocs/
 
+# Copiar archivo de configuración proxy
+COPY proxy.conf /usr/local/apache2/conf/proxy.conf
+
+# Incluir proxy.conf en configuración global
+RUN echo "Include /usr/local/apache2/conf/proxy.conf" >> /usr/local/apache2/conf/httpd.conf
+
+

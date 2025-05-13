@@ -7,7 +7,7 @@ import { Estudiante } from '../models/estudiante.model';
   providedIn: 'root'
 }) 
 export class EstudianteService {
-  private apiUrl = 'http://localhost:8082/demoappdocker/api/estudiantes';
+  private apiUrl = '/api/estudiantes';
 
 
   constructor(private http: HttpClient) {}
